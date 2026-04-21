@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link2, Search, Star, RefreshCw, AlertOctagon, Database, X, Trash2 } from 'lucide-react';
-import { fetchReviews, fetchProducts, saveLocalProduct, getLocalProducts, getLocalReviews } from '../data/api';
+import { fetchReviews, fetchProducts, saveLocalProduct, getLocalProducts, getLocalReviews, analyzeProductUrl } from '../data/api';
 import { fetchAndAnalyzeProduct } from '../data/rapidapi';
 import ReviewCard from '../components/ReviewCard';
 import EmptyState from '../components/EmptyState';

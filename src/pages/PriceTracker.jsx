@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link2, Search, Star, Trash2, TrendingDown, TrendingUp, RefreshCw, AlertOctagon, Database } from 'lucide-react';
 import { fetchSerpApiPrice } from '../data/serpapi';
+import { analyzeProductUrl } from '../data/api';
 import {
   Chart as ChartJS, CategoryScale, LinearScale, PointElement,
   LineElement, Tooltip, Filler
@@ -28,7 +29,6 @@ export default function PriceTracker() {
       } catch (serpErr) {
         console.warn('SerpAPI failed, trying backend fallback...', serpErr);
         // Fallback to AI backend
-        const { analyzeProductUrl } = await import('../data/api');
         const backendData = await analyzeProductUrl(url.trim());
         
         data = {
